@@ -1,0 +1,38 @@
+<!-- <link rel="stylesheet" href="hny.css" /> -->
+<% content_for :title do %>Zabbix dashboard<% end %>
+<div class="gridster">
+	<ul>
+		<% settings.zabbix_widget_names.each do |zabbix_widget| %>
+		   <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+                    <a class="button" href="#modal-<%=zabbix_widget%>"><span class="triangle"><i class="fa"></i></span></a>
+		    <div data-id="<%=zabbix_widget%>" data-view="Text" data-title="<%=zabbix_widget%>" data-text="" data-moreinfo=""></div>
+		  </li>
+		<% end %>
+	</ul>
+</div>
+<div class="legenda">
+ </br>
+ <div class="context"><div class="priority-ok"></div><p>    OK</p></div>
+ <div class="context"><div class="priority-acknowledged"></div><p>    ПОДТВЕРЖДЕН</p></div>
+ <div class="context"><div class="priority-info"></div><p>    ИНФОРМАЦИЯ</p></div>
+ <div class="context"><div class="priority-warning"></div><p>    ПРЕДУПРЕЖДЕНИЕ</p></div>
+ <div class="context"><div class="priority-average"></div><p>    СРЕДНИЙ</p></div>
+ <div class="context"><div class="priority-high"></div><p>    ВЫСОКИЙ</p></div>
+ <div class="context"><div class="priority-disaster"></div><p>    ЧРЕЗВЫЧАЙНЫЙ</p></div>
+</div>
+
+<audio id="audio_disaster">
+   <source src="/assets/sounds/alarm_disaster.wav" type="audio/mpeg">
+</audio>
+<audio id="audio_high">
+   <source src="/assets/sounds/alarm_high.wav" type="audio/mpeg">
+</audio>
+<audio id="audio_average">
+    <source src="/assets/sounds/alarm_average.wav" type="audio/mpeg">
+</audio>
+<audio id="audio_warning">
+    <source src="/assets/sounds/alarm_warning.wav" type="audio/mpeg">
+</audio>
+<audio id="audio_information">
+    <source src="/assets/sounds/alarm_information.wav" type="audio/mpeg">
+</audio>

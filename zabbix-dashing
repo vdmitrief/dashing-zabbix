@@ -1,0 +1,43 @@
+#!/bin/bash
+# chkconfig: - 99 01
+# description: dashing zabbix monitor
+
+export NLS_LANG=RUSSIAN_CIS.CL8MSWIN1251
+export RUBYOPT="-W0"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/usr/lib/oracle/18.5/client64/bin"
+
+case "$1" in
+  start)
+      echo -n $"Starting dashing: "
+      cd /opt/zabbix-dashing
+      /usr/local/bin/dashing start -p 80 -d --tag dashing -P /opt/zabbix-dashing/dashing.pid
+      echo
+      ;;
+
+  stop)
+      echo -n $"Stoping dashing: "
+      cd /opt/zabbix-dashing
+      #dashing stop
+      kill -9 $(cat /opt/zabbix-dashing/dashing.pid)
+      rm -f /opt/zabbix-dashing/dashing.pid
+      echo
+      ;;
+
+  reload|restart)
+      stop
+      sleep 10
+      start
+      echo
+      ;;
+
+  status)
+      ps -ef | grep "dashing" | grep -v "grep" | grep -v "status"
+      ;;
+
+  *)
+  echo "Usage: "$1" {start|stop|restart|status}"
+  exit 1
+esac
+
+exit 0
+

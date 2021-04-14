@@ -1,0 +1,18 @@
+{
+ "Zabbix" : {
+               "api_config" : {
+                        "url" : "http://zabbix-web.domain.ru/api_jsonrpc.php",
+                        "user" : "zabbix-username",
+                        "password" : "zabbix-password"
+                },
+                "aliases":[
+                            {"group_name": "zabbix group 1",                 "alias": "network"},
+                            {"group_name": "zabbix group 2",                 "alias": "network"},
+                            {"group_name": "zabbix group 3",                 "alias": "servers"},
+                            {"group_name": "zabbix group 4",                 "alias": "servers"}
+
+                ]
+ },
+
+ "auth_token" : "YOUR-AUTH-TOKEN"
+}

@@ -1,0 +1,196 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color: #222;
+$text-color: #fff;
+
+$background-warning-color-1: #e82711;
+$background-warning-color-2: #9b2d23;
+$text-warning-color: #fff;
+
+$background-danger-color-1: #eeae32;
+$background-danger-color-2: #ff9618;
+$text-danger-color: #fff;
+
+
+@-webkit-keyframes status-warning-background {
+  0%   { background-color: $background-warning-color-1; }
+  50%  { background-color: $background-warning-color-2; }
+  100% { background-color: $background-warning-color-1; }
+}
+@-webkit-keyframes status-danger-background {
+  0%   { background-color: $background-danger-color-1; }
+  50%  { background-color: $background-danger-color-2; }
+  100% { background-color: $background-danger-color-1; }
+}
+@mixin animation($animation-name, $duration, $function, $animation-iteration-count:""){
+  -webkit-animation:  $animation-name $duration $function #{$animation-iteration-count};
+  -moz-animation:     $animation-name $duration $function #{$animation-iteration-count};
+  -ms-animation:      $animation-name $duration $function #{$animation-iteration-count};
+}
+
+$background-color:  #ffae42;
+$background-color-ok: #228b22;
+$background-color-info: #c400ff;
+$background-color-warning: #ffba00;
+$background-color-average: #ff6800;
+$background-color-high: #ff0000;
+$background-color-disaster: #dc143c;
+$background-color-acknowledged: #0000ff;
+
+$title-color:       rgba(255, 255, 255, 0.7);
+$moreinfo-color:    rgba(255, 255, 255, 0.7);
+// ----------------------------------------------------------------------------
+
+iframe {
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+td {
+  vertical-align: middle;
+}
+
+ul, ol {
+  padding: 0;
+  margin: 0;
+}
+
+.widget {
+  text-align: center;
+  height: inherit;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+h1, h2, h3, h4, h5, p {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  margin-bottom: 12px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 76px;
+  font-weight: 700;
+  color: $text-color;
+}
+
+h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: $text-color;
+  width: 200px;
+}
+// ----------------------------------------------------------------------------
+.status-ok {
+ background-color: $background-color-ok;
+}
+
+.status-info {
+ background-color: $background-color-info;
+}
+
+.status-average {
+ background-color: $background-color-average;
+}
+
+.status-warning {
+ background-color: $background-color-warning;
+}
+
+.status-high {
+ background-color: $background-color-high;
+}
+
+.status-disaster {
+ background-color: $background-color-disaster;
+}
+
+.status-acknowledged {
+ background-color: $background-color-acknowledged;
+}
+
+//-----------------------------------------------------------------------------
+// LEGENDA
+
+.legenda{
+ margin-left: 12%;
+}
+
+.legenda .context{
+ float: left;
+ width: 240px;
+}
+
+.legenda .priority-ok{
+ width: 40px;
+ height: 40px;
+ float: left;
+ background: $background-color-ok;
+}
+
+.legenda .priority-info{
+ width: 40px;
+ height: 40px;
+ float: left;
+ background: $background-color-info;
+}
+
+.legenda .priority-average{
+ width: 40px;
+ height: 40px;
+ float: left;
+ background: $background-color-average;
+}
+
+//orange -.
+.legenda .priority-warning{
+ width: 40px;
+ height: 40px;
+ float: left;
+ background: $background-color-warning;
+}
+
+//red
+.legenda .priority-high{
+ width: 40px;
+ height: 40px;
+ float: left;
+ background: $background-color-high;
+}
+
+.legenda .priority-disaster{
+ width: 40px;
+ height: 40px;
+ float: left;
+ background: $background-color-disaster;
+}
+
+.legenda .priority-acknowledged{
+ width: 40px;
+ height: 40px;
+ float: left;
+ background: $background-color-acknowledged;
+}
+//-------------------------------------------------------------------------------
+// counter
+.counter {
+position: absolute;
+width: 30px;
+height: 30px;
+background: #2b2b2f;
+top: 0px;
+right: 0px;
+}

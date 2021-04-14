@@ -1,0 +1,204 @@
+.triangle .fa {
+ position: relative;
+ top:-30px;
+ left:2px;
+ display: inline-block;
+ font: normal normal normal 14px/1 FontAwesome;
+ font-size: inherit;
+ text-rendering: auto;
+ -webkit-font-smoothing: antialiased;
+}
+
+.triangle .fa:before {
+ content: "\F129";
+}
+
+.triangle {
+position: absolute;
+width: 0;
+height: 0;
+display: block;
+top: 0px;.
+left: 0px;
+border-top: 30px solid #2b2b2f;
+border-right: 30px solid transparent;
+}
+
+/*
+* Базовые стили модального окна 
+* и фона затемнения
+*/
+
+.modalbg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+/* Цвет фона затемнения */
+    background: rgba(0, 0, 0, 0);
+    visibility: hidden;
+    z-index: 9999;
+/* Устанавливаем эффект перехода */
+    -moz-transition: all 1s ease-out;
+    -webkit-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+    opacity: 0;
+    pointer-events: none;
+}
+/* Формируем блок с содержанием */
+.dialog {
+    max-width: 1500px;
+    min-width: 300px;
+    font-family: 'Open Sans', sans-serif;
+    color: #222222;
+    position: relative;
+    top: -1000px;
+    margin: 15% auto;
+    padding: 5px 20px 13px 20px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: #fefefe;
+/* Добавляем тени */
+    -webkit-box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
+    z-index: 99999;
+    -moz-transition: all 0.6s ease-out;
+    -webkit-transition: all 0.6s ease-out;
+    -o-transition: all 0.6s ease-out;
+    transition: all 0.6s ease-out;
+}
+.dialog h2 {
+    padding: 50px 0;
+    font-weight: 100;
+    text-align: center;
+    color: black;
+}
+.dialog ul {
+    margin-left: 20px;
+}
+.dialog .priority-0 {
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    float: left;
+}
+.dialog .priority-1 {
+    width: 20px;
+    height: 20px;
+    background: #228b22
+    float: left;
+}
+.dialog .priority-2 {
+    width: 20px;
+    height: 20px;
+    background: #ffba00
+    float: left;
+}
+.dialog .priority-3 {
+    width: 20px;
+    height: 20px;
+    background: #ff6800
+    float: left;
+}
+.dialog .priority-4 {
+    width: 20px;
+    height: 20px;
+    background: #ff0000
+    float: left;
+}
+.dialog .priority-5 {
+    width: 20px;
+    height: 20px;
+    background: #dc143c
+    float: left;
+}
+
+.dialog .widget {
+}
+
+/* unvisited link */
+.dialog a:visited {
+    color: #0275b8;
+    text-decoration:none;
+}
+
+.dialog a:link {
+    color: #0275b8;
+    text-decoration:underline;
+}
+
+.dialog table{
+    border-collapse: separate;
+    border-spacing: 10px 10px;
+}
+
+.dialog td{
+    text-align: left;
+    margin-left: 10px;
+}
+
+
+/* Активируем затемнение фона */
+.modalbg:target {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    background: rgba(4, 10, 30, 0.8);
+    /* Устанавливаем эффект перехода */
+    -moz-transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+/* Активируем модальное окно */
+.modalbg:target .dialog {
+    top: 50px;
+    -moz-transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+/*** Кнопка закрытия ***/
+.close {
+    background-color: rgba(61, 61, 61, 0.8);
+    border: 2px solid #ccc; 
+    color: #FFFFFF;
+    line-height: 20px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 20px;
+    text-decoration: none;
+    font-size: 12px;  
+    font-weight: bold;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #000000;
+    -moz-box-shadow: 0 0 10px #000000;
+    -webkit-box-shadow: 0 0 10px #000000;
+    -moz-transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+.close:hover {
+    background-color: rgba(252, 20, 0, 0.8);
+    -moz-transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+.print {
+    margin-left: 20px;
+    font-style: italic;
+    font-size: 14px;
+    float: left;
+    text-align: left;
+}
